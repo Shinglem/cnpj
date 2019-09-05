@@ -1,4 +1,3 @@
-
 <template>
     <el-container style="height: 500px; border: 1px solid #eee">
 
@@ -87,7 +86,6 @@
         color: #333;
         line-height: 60px;
     }
-
     .el-aside {
         color: #333;
     }

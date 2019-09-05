@@ -24,6 +24,11 @@ module.exports = {
             {
                 test: /\.(eot|woff|ttf)$/,
                 loader: 'file-loader'
+            },
+
+            {
+                test: /\.html$/,
+                loader: 'html-loader'
             }
         ]
     },

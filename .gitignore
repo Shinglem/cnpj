@@ -49,3 +49,4 @@ gradlew
 gradlew.bat
 .vertx/
 logs/
+node_modules/

@@ -1,3 +1,4 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 import org.jetbrains.kotlin.allopen.gradle.AllOpenExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.kotlin.noarg.gradle.NoArgExtension
@@ -7,6 +8,7 @@ plugins {
     kotlin("jvm")
     id("org.jetbrains.kotlin.plugin.noarg")
     id("org.jetbrains.kotlin.plugin.allopen")
+    id("com.github.johnrengelman.shadow")
 }
 
 group = "io.github.shinglem"
@@ -55,4 +57,13 @@ configure<NoArgExtension> {
     this.annotations(
         "com.sanss.ibp.bac.common.util.NoArg"
     )
+}
+
+tasks.withType<ShadowJar>{
+    archiveBaseName.set("shadow")
+    archiveClassifier.set("")
+    archiveVersion.set("")
+    manifest {
+        this.attributes ("Main-Class" to "io.github.shinglem.cnpj.AppKt")
+    }
 }

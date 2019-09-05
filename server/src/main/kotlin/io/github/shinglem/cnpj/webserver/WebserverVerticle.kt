@@ -10,7 +10,6 @@ import io.vertx.ext.web.handler.LoggerHandler
 import io.vertx.ext.web.handler.StaticHandler
 import io.vertx.kotlin.core.http.listenAwait
 import io.vertx.kotlin.coroutines.CoroutineVerticle
-import kotlinx.coroutines.launch
 import org.slf4j.LoggerFactory
 
 
@@ -30,16 +29,10 @@ class WebserverVerticle() : CoroutineVerticle() {
             val server = vertx.createHttpServer()
 
             val router = Router.router(vertx)
-
-
-
-
             router.route().order(-1).handler(LoggerHandler.create())
-            router.get("/web/*").order(-1).handler(StaticHandler.create("/web").setCachingEnabled(false))
+            router.get("/*").order(-1).handler(StaticHandler.create().setCachingEnabled(false))
 
             router.route("/api/*").order(-1).handler(BodyHandler.create())
-
-
 
             router.errorHandler(404) {
                 logger.info("[404 handler]")
@@ -164,11 +157,6 @@ class WebserverVerticle() : CoroutineVerticle() {
                 .requestHandler(router)
                 .listenAwait(port)
             logger.info("web start success , listening ${port}")
-
-            val httpClient = vertx.createHttpClient()
-            httpClient.getAbs("http://127.0.0.1:12000/web/index.html"){
-                logger.info("get web success ")
-            }.end()
 
         } catch (e: Exception) {
 

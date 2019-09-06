@@ -3,15 +3,7 @@
     <el-container style="height: 500px; border: 1px solid #eee">
 
         <el-header style="text-align: right; font-size: 12px">
-            <el-dropdown>
-                <i class="el-icon-setting" style="margin-right: 15px"></i>
-                <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>查看</el-dropdown-item>
-                    <el-dropdown-item>新增</el-dropdown-item>
-                    <el-dropdown-item>删除</el-dropdown-item>
-                </el-dropdown-menu>
-            </el-dropdown>
-            <span>王小虎</span>
+
         </el-header>
         <el-container>
             <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
@@ -94,6 +86,9 @@
 </style>
 
 <script>
+
+
+
     export default {
         data() {
             const item = {

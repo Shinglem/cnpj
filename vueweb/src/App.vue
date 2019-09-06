@@ -38,8 +38,9 @@
     import Left from './components/frame/Left.vue'
     import Main from './components/content/Main.vue'
 
-    export default {
 
+
+    export default {
 
         components: {
             Head, Left, Main

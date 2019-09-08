@@ -1,6 +1,8 @@
 <template>
     <div>
-        <span>产能软件</span>
+
+            <span>产能软件</span>
+
     </div>
 </template>
 

@@ -1,0 +1,9 @@
+; Arithmetic.def
+; 定义输出函数的名字，如果不在这里定义函数对应的名字，则DLL函数名会增加一个前缀_和后缀@X这样
+
+LIBRARY      "Arithmetic"
+DESCRIPTION  'Arithmetic Windows动态链接库'
+
+EXPORTS
+   ; 在此定义函数名对应的输出名字
+   ChanLianYuCe ChanLianYuCe

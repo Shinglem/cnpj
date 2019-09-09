@@ -5,10 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    test : 'second'
+    test : 'first'
   },
   mutations: {
-
+    setTest(state , test){
+      state.test = test
+    }
   },
   actions: {
 
